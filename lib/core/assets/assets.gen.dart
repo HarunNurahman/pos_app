@@ -85,10 +85,140 @@ class $AssetsIconsGen {
   ];
 }
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/f1.jpeg
+  AssetGenImage get f1 => const AssetGenImage('assets/images/f1.jpeg');
+
+  /// File path: assets/images/f2.jpeg
+  AssetGenImage get f2 => const AssetGenImage('assets/images/f2.jpeg');
+
+  /// File path: assets/images/f3.jpeg
+  AssetGenImage get f3 => const AssetGenImage('assets/images/f3.jpeg');
+
+  /// File path: assets/images/f4.jpeg
+  AssetGenImage get f4 => const AssetGenImage('assets/images/f4.jpeg');
+
+  /// File path: assets/images/f5.jpeg
+  AssetGenImage get f5 => const AssetGenImage('assets/images/f5.jpeg');
+
+  /// File path: assets/images/f6.jpeg
+  AssetGenImage get f6 => const AssetGenImage('assets/images/f6.jpeg');
+
+  /// File path: assets/images/f7.jpeg
+  AssetGenImage get f7 => const AssetGenImage('assets/images/f7.jpeg');
+
+  /// File path: assets/images/f8.jpeg
+  AssetGenImage get f8 => const AssetGenImage('assets/images/f8.jpeg');
+
+  /// File path: assets/images/logo.svg
+  SvgGenImage get logo => const SvgGenImage('assets/images/logo.svg');
+
+  /// File path: assets/images/manage_printer.png
+  AssetGenImage get managePrinter =>
+      const AssetGenImage('assets/images/manage_printer.png');
+
+  /// File path: assets/images/manage_printerx.png
+  AssetGenImage get managePrinterx =>
+      const AssetGenImage('assets/images/manage_printerx.png');
+
+  /// File path: assets/images/manage_product.png
+  AssetGenImage get manageProduct =>
+      const AssetGenImage('assets/images/manage_product.png');
+
+  /// List of all assets
+  List<dynamic> get values => [
+    f1,
+    f2,
+    f3,
+    f4,
+    f5,
+    f6,
+    f7,
+    f8,
+    logo,
+    managePrinter,
+    managePrinterx,
+    manageProduct,
+  ];
+}
+
 class Assets {
   const Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
+}
+
+class AssetGenImage {
+  const AssetGenImage(this._assetName, {this.size, this.flavors = const {}});
+
+  final String _assetName;
+
+  final Size? size;
+  final Set<String> flavors;
+
+  Image image({
+    Key? key,
+    AssetBundle? bundle,
+    ImageFrameBuilder? frameBuilder,
+    ImageErrorWidgetBuilder? errorBuilder,
+    String? semanticLabel,
+    bool excludeFromSemantics = false,
+    double? scale,
+    double? width,
+    double? height,
+    Color? color,
+    Animation<double>? opacity,
+    BlendMode? colorBlendMode,
+    BoxFit? fit,
+    AlignmentGeometry alignment = Alignment.center,
+    ImageRepeat repeat = ImageRepeat.noRepeat,
+    Rect? centerSlice,
+    bool matchTextDirection = false,
+    bool gaplessPlayback = true,
+    bool isAntiAlias = false,
+    String? package,
+    FilterQuality filterQuality = FilterQuality.medium,
+    int? cacheWidth,
+    int? cacheHeight,
+  }) {
+    return Image.asset(
+      _assetName,
+      key: key,
+      bundle: bundle,
+      frameBuilder: frameBuilder,
+      errorBuilder: errorBuilder,
+      semanticLabel: semanticLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      scale: scale,
+      width: width,
+      height: height,
+      color: color,
+      opacity: opacity,
+      colorBlendMode: colorBlendMode,
+      fit: fit,
+      alignment: alignment,
+      repeat: repeat,
+      centerSlice: centerSlice,
+      matchTextDirection: matchTextDirection,
+      gaplessPlayback: gaplessPlayback,
+      isAntiAlias: isAntiAlias,
+      package: package,
+      filterQuality: filterQuality,
+      cacheWidth: cacheWidth,
+      cacheHeight: cacheHeight,
+    );
+  }
+
+  ImageProvider provider({AssetBundle? bundle, String? package}) {
+    return AssetImage(_assetName, bundle: bundle, package: package);
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
 }
 
 class SvgGenImage {
