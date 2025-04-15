@@ -3,6 +3,7 @@ import 'package:pos_app/core/assets/assets.gen.dart';
 import 'package:pos_app/core/constants/colors.dart';
 import 'package:pos_app/presentation/home/screens/home_screen.dart';
 import 'package:pos_app/presentation/home/widgets/nav_item.dart';
+import 'package:pos_app/presentation/order/screens/order_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -16,7 +17,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   final List<Widget> _pages = [
     HomeScreen(),
-    Scaffold(body: Center(child: Text('Page 2'))),
+    OrderScreen(),
     Scaffold(body: Center(child: Text('Page 3'))),
     Scaffold(body: Center(child: Text('Page 4'))),
   ];
@@ -57,7 +58,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
             NavItem(
               iconPath: Assets.icons.orders.path,
-              label: 'Page 2',
+              label: 'Order',
               isActive: _selectedIndex == 1,
               onTap: () => _onItemTapped(1),
             ),

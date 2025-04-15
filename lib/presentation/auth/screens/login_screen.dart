@@ -35,8 +35,8 @@ class _LoginScreenState extends State<LoginScreen> {
           Center(
             child: SvgPicture.asset(
               Assets.images.logo.path,
-              width: 200,
-              height: 200,
+              width: 128,
+              height: 128,
             ),
           ),
           SizedBox(height: 24),
@@ -44,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Text(
               'My POS App',
               style: TextStyle(
-                fontSize: 36,
+                fontSize: 24,
                 fontWeight: bold,
                 color: AppColors.black,
               ),
